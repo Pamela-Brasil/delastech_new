@@ -1,3 +1,6 @@
+{% extends 'base.html' %}
+
+{% block content %}
 <div class="forum-container">
     <div class="botao-nova-postagem">
       <a href="{% url 'criar_postagem' %}" class="btn-postar">Nova Postagem</a>
@@ -13,3 +16,4 @@
       <p class="sem-postagem">Nenhuma postagem encontrada ainda. Seja a primeira a compartilhar sua experiência!</p>
     {% endfor %}
   </div>
+  {% endblock %}
