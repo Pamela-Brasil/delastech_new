@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'empresa.apps.EmpresaConfig',
     'usuaria.apps.UsuariaConfig',
-    'forum_app.apps.Forum_AppConfig',
+    'forum_app.apps.ForumAppConfig',
 
 ]
 
