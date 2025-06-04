@@ -2,16 +2,24 @@ from django.db import models
 
 # Create your models here.
 class Usuaria(models.Model):
+       ESCOLARIDADE_CHOICES = [
+        ('fundamental', 'Ensino Fundamental'),
+        ('medio', 'Ensino Médio'),
+        ('superior', 'Ensino Superior'),
+        ('pos', 'Pós-Graduação'),
+        ('mestrado', 'Mestrado'),
+        ('doutorado', 'Doutorado'),
+    ]
     nome = models.CharField(max_length=20)
     sobrenome = models.CharField(max_length=100)
     cpf = models.CharField(max_length=11, unique=True)
-    cnpj = models.CharField(max_length=14, unique=True)
+    cnpj = models.CharField(max_length=14, unique=True, blank=True, null=True)
     data_nascimento = models.DateField()
     email =  models.EmailField(unique=True)
     telefone = models.CharField(max_length=20, blank=True, null=True)
-    escolaridade = models.CharField(max_length=30)
-    idiomas = models.CharField(max_length=100)
-    experiencia = models.CharField(max_length=3000)
+    escolaridade = models.CharField(max_length=30,choices=ESCOLARIDADE_CHOICES)
+    idiomas = models.CharField(ManyToManyField(Idioma))
+    experiencia = models.CharField(TextField())
     apelido = models.CharField(max_length=100, unique=True)
 
     def __str__(self):
@@ -20,3 +28,10 @@ class Usuaria(models.Model):
     class Meta:
         verbose_name = "Usuaria"
         ordering = ['apelido']
+
+
+class Idioma(models.Model):
+    nome = models.CharField(max_length=50, unique=True)
+
+    def __str__(self):
+        return self.nome
