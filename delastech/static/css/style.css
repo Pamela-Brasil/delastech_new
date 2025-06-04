@@ -32,19 +32,19 @@ header nav ul {
 }
 header nav ul li a {
     color: #7d9d87;
-    font-family: serif;
+    font-family: 'Playfair Display', serif;
     font-style: italic;
     font-weight: bold;
     text-decoration: none;
-    text-align: justify;
+    text-align: center;
     padding: 15px;
-    font-size: 26px;
+    font-size: clamp(2rem, 5vw, 4rem); /* *************** */
 }
 body main section div h1 {
     padding: 20px 80px 20px 80px;
-    font-family: serif;
+    font-family: 'Open Sans', sans-serif;
     font-style: italic;
-    font-size: 80px;
+    font-size: clamp(2rem, 5vw, 4rem); /* ****************** */
     text-align:center;
     color: #e6cfcf;
 }
@@ -59,9 +59,9 @@ body main section div h1 {
 .titulos {
     margin: 200px 0px 80px 0px;
     padding: 20px;
-    font-family: serif;
+    font-family: 'Playfair Display', serif;
     font-style: italic;
-    font-size: 70px;
+    font-size: clamp(2rem, 5vw, 4rem);  /* ********************* */
     text-align:center;
     color: #5e0219;
 }
@@ -76,8 +76,8 @@ body main section div h1 {
 #texto {
     padding: 20px 120px 20px 120px;
     text-align:center;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 30px; 
+    font-family:'Open Sans', sans-serif;
+    font-size: clamp(2rem, 5vw, 4rem);  /* ********************* */ 
     line-height: 1.5;
     color: #f7e5ea;
 }
@@ -87,8 +87,8 @@ body main section div h1 {
     display: flex;
     justify-content:space-between;
 }
-#video {
-width: 71vh;
+#video {    
+    width: 71vh;
     height: 40vh;
 }
 .contato {
@@ -116,8 +116,8 @@ width: 71vh;
     width: 95%;
     margin: 10px 0;
     padding: 10px;
-    font-size: 20px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: clamp(2rem, 5vw, 4rem); /* *************************** */
+    font-family: 'Open Sans', sans-serif;
     color: #f7e5ea;
 }
 .input {
@@ -132,7 +132,7 @@ width: 71vh;
     padding: 16px;
     color: #f7e5ea;
     font-weight: bold;
-    font-size: 16px;
+    font-size: clamp(2rem, 5vw, 4rem);   /* ************************ */
     border-radius:10px;
     width: 120px;
 }
@@ -150,8 +150,8 @@ width: 71vh;
 }
 #subtitulos {
     color:#c48b47;
-    font-size: 24px;
-    font-family: serif;
+    font-size: 2clamp(2rem, 5vw, 4rem); /* ********* */
+    font-family: 'Open Sans', sans-serif;
     margin-bottom:30px;
 }
 footer {
@@ -167,23 +167,23 @@ footer {
     min-height: 100%;
 }
 .footer-main {
-    font-size: 20px;
+    font-size: clamp(2rem, 5vw, 4rem); /* *************************** */
 }
 .contato-footer {
     text-align: center;
 }
 .servicos h1 {
-    font-size: 70px;
+    font-size: clamp(2rem, 5vw, 4rem); /* ****************************** */
     margin-bottom: 10px;
     text-align: center;
-    font-family: serif;
+    font-family: 'Open Sans', sans-serif;
     font-style: italic;
     text-align:center;
     color: #5e0219;
 }
 
 .servicos p {
-    font-size: 50px;
+    font-size: clamp(2rem, 5vw, 4rem); /* ************************* */
     line-height: 1.6;
     margin-bottom: 50px;
     text-align: center;
@@ -205,26 +205,24 @@ footer {
 
 .card:hover {
     transform: translateY(-5px);
+    cursor: pointer;
 }
 
 .card h2 {
-    font-size: 25px;
+    font-size: clamp(2rem, 5vw, 4rem); /* **************************** */
     color: #5e0219;
     margin-bottom: 10px;
 }
 
 .card p {
-    font-size: 20px;
+    font-size: clamp(2rem, 5vw, 4rem); /* *************************** */
 }
 .slogan {
-    font-size: 100px;
+    font-size: clamp(2rem, 5vw, 4rem); /* ********************* */
     color: #5e0219;
     text-align: center;
-    
-
-}
+    }
 #redes {
     width: 20vh;
     height: auto;
 }
-
