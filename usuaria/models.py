@@ -18,8 +18,8 @@ class Usuaria(models.Model):
     email =  models.EmailField(unique=True)
     telefone = models.CharField(max_length=20, blank=True, null=True)
     escolaridade = models.CharField(max_length=30,choices=ESCOLARIDADE_CHOICES)
-    idiomas = models.CharField(ManyToManyField(Idioma))
-    experiencia = models.CharField(TextField())
+    idiomas = models.ManyToManyField(Idioma)
+    experiencia = models.TextField()
     apelido = models.CharField(max_length=100, unique=True)
 
     def __str__(self):
