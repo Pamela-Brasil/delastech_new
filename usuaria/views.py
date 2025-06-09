@@ -25,3 +25,9 @@ class ListaUsuarias(ListView):  #Nessa class, mais tarde entrará a página de c
     form_class = FormUsuaria
     template_name = 'usuaria/candidatas.html'
     
+
+class Exclusao(DeleteView):
+    model = Usuaria
+    form_class = FormUsuaria
+    template_name = 'usuaria/delete'
+    success_url = ''
