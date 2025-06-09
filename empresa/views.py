@@ -24,3 +24,10 @@ class Edicao(UpdateView):
     form_class = FormEmpresa
     template_name = 'empresa/edit'
     success_url = 
+
+
+class Exclusao(DeleteView):
+    model = Empresa
+    form_class = FormEmpresa
+    template_name = 'empresa/delete'
+    success_url = ''
