@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import EmpresasParceiras, Cadastro, Edicao
+from .views import EmpresasParceiras, Cadastro, Edicao, Exclusao
 
 urlpatterns = [
     path('parceiras/', EmpresasParceiras.as_view(), name="empresas_parceiras"),
