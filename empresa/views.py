@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Empresa
 from django.http import HttpResponse
 from django.views import View
