@@ -1,4 +1,5 @@
 from django.urls import path
+from .views import CadastroUs, EdicaoUs,ListaUsuarias, Exclusao
 
 urlpatterns = [
     path('novadela/', CadastroUs.as_view(), name="nova_user"),
