@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .models import Empresa
 from django.http import HttpResponse
 from django.views import View
-from django.views.generic import ListView, CreateView, UpdateView
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from .forms import FormEmpresa
 
