@@ -17,17 +17,29 @@ class Cadastro(CreateView):
     model = Empresa
     form_class = FormEmpresa
     template_name = 'empresa/nova'
+<<<<<<< HEAD
     success_url = ''
+=======
+    success_url = 
+>>>>>>> d79063c23d590f9d216d02ec4f01b8bb8d811ea2
 
 class Edicao(UpdateView):
     model = Empresa
     form_class = FormEmpresa
     template_name = 'empresa/edit'
+<<<<<<< HEAD
     success_url = ''
+=======
+    success_url = 
+>>>>>>> d79063c23d590f9d216d02ec4f01b8bb8d811ea2
 
 
 class Exclusao(DeleteView):
     model = Empresa
     form_class = FormEmpresa
     template_name = 'empresa/delete'
+<<<<<<< HEAD
     success_url = ''
+=======
+    success_url = ''
+>>>>>>> d79063c23d590f9d216d02ec4f01b8bb8d811ea2
