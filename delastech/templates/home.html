@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}DelasTech | Codando o futuro com alma e voz feminina{% endblock %}
+
+{% block content %}
+
+<div class="text-center my-5">
+    <img id="slogan" src="{% static 'img/slogan.png' %}" class="img-fluid" alt="Slogan DelasTech">
+</div>
+
+<section class="container bg-warning bg-opacity-75 rounded-5 py-5 px-4 mb-5">
+    <h1 class="text-center fw-bold text-danger mb-4">Nós somos a DelasTech!</h1>
+    <p class="text-center fs-5 text-light">
+        A DelasTech visa promover o protagonismo feminino na tecnologia por meio do desenvolvimento de soluções digitais inovadoras em front e back-end, ao mesmo tempo em que capacitamos, acolhemos e fortalecemos mulheres desenvolvedoras em diferentes momentos da carreira — desde jovens em busca de propósito até profissionais que retomam sua trajetória após a maternidade.
+    </p>
+    <p class="text-center fs-5 text-light">
+        Ser referência no mercado de tecnologia como um ecossistema de inovação inclusiva, que transforma realidades, reduz desigualdades de gênero e impulsiona o talento de mulheres desenvolvedoras no Brasil e no mundo.
+    </p>
+</section>
+
+<section class="container text-center my-5">
+    <h1 class="fw-bold text-danger">Elas Falam</h1>
+</section>
+
+<section class="container d-flex flex-column flex-md-row justify-content-center gap-4 mb-5">
+    <div class="ratio ratio-16x9 w-100 w-md-50">
+        <iframe src="https://www.youtube.com/embed/Me4S5Fb3_Vo?si=8ZXYjk4K-bfShBmj" title="YouTube video player" allowfullscreen></iframe>
+    </div>
+    <div class="ratio ratio-16x9 w-100 w-md-50">
+        <iframe src="https://www.youtube.com/embed/iQWViNgGpY4?si=IQlq7An6DQtmsMHE" title="YouTube video player" allowfullscreen></iframe>
+    </div>
+</section>
+
+{% endblock %}

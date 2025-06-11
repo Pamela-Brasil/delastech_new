@@ -39,11 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'empresa.apps.EmpresaConfig',
     'usuaria.apps.UsuariaConfig',
-<<<<<<< HEAD
-    'bootstrap5',
-=======
     'forum_app.apps.ForumAppConfig',
->>>>>>> d79063c23d590f9d216d02ec4f01b8bb8d811ea2
+    'bootstrap5',
 
 ]
 
