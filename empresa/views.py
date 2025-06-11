@@ -8,7 +8,6 @@ from .forms import FormEmpresa
 
 # Create your views here.
 
-
 class EmpresasParceiras(ListView):
     model = Empresa
     template_name = 'empresa/emp-parceiras.html'
@@ -17,7 +16,7 @@ class Cadastro(CreateView):
     model = Empresa
     form_class = FormEmpresa
     template_name = 'empresa/nova'
-    success_url = ''
+    success_url = reverse_lazy('empresa:empresas-parceiras')
 
 class Edicao(UpdateView):
     model = Empresa

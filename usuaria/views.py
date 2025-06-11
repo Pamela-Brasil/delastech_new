@@ -2,10 +2,8 @@ from django.shortcuts import render
 from .models import Usuaria
 from .forms import FormUsuaria
 from django.views.generic import ListView,CreateView,UpdateView, DeleteView
-from django.urls import reverse_lazy
 
 # Create your views here.
-
 class CadastroUs(CreateView):
     model = Usuaria
     form_class = FormUsuaria

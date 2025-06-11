@@ -2,18 +2,18 @@
 
 {% block content %}
 <div class="forum-container">
-    <div class="botao-nova-postagem">
+  <div class="botao-nova-postagem">
       <a href="{% url 'criar_postagem' %}" class="btn-postar">Nova Postagem</a>
-    </div>
+  </div>
   
-    {% for postagem in postagens %}
-      <div class="postagem">
-        <p class="autora"><strong>Autora:</strong> {{ postagem.autora }}</p>
-        <p class="conteudo">“{{ postagem.conteudo }}”</p>
-        <p class="data"><small>Publicado em {{ postagem.data_criacao|date:"d/m/Y H:i" }}</small></p>
-      </div>
+  {% for postagem in postagens %}
+    <div class="postagem">
+      <p class="autora"><strong>Autora:</strong> {{ postagem.autora }}</p>
+      <p class="conteudo">“{{ postagem.conteudo }}”</p>
+      <p class="data"><small>Publicado em {{ postagem.data_criacao|date:"d/m/Y H:i" }}</small></p>
+    </div>
     {% empty %}
       <p class="sem-postagem">Nenhuma postagem encontrada ainda. Seja a primeira a compartilhar sua experiência!</p>
-    {% endfor %}
-  </div>
-  {% endblock %}
+  {% endfor %}
+</div>
+{% endblock %}
