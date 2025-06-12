@@ -17,11 +17,11 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
-from .views import HomePage
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', HomePage.as_view(), name='home'),    
+    path('', include('principal.urls')),
     path('forum/', include('forum_app.urls')),
     path('elas/', include('usuaria.urls')),
     path('empresa/', include('empresa.urls')),
