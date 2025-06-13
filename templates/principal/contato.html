@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}Fale com Elas{% endblock %}
+
+{% block content %}
+        <section class="contato">
+            <div class="area-formulario">
+                <div  id="subtitulos">
+                    <h2>Fale Conosco</h2>
+                </div>    
+                <form class="formulario">
+                    <div class="campos-formulario">
+                        <label for="nome">Nome</label>
+                        <input type="text" name="nome" class="input" id="nome" placeholder="Digite o seu nome">
+                    </div>
+                    <div class="campos-formulario">
+                        <label for="email">E-mail</label>
+                        <input type="text" name="email" class="input"  id="email" placeholder="Digite o seu e-mail">
+                    </div>
+                    <div class="campos-formulario">
+                        <label for="telefone">Telefone</label>
+                        <input type="number" name="telefone" class="input"  id="telefone" placeholder="Digite o seu telefone">
+                    </div>
+                    <div class="campos-formulario">
+                        <label for="assunto">Assunto</label>
+                        <input type="text" name="assunto" class="input"  id="assunto" placeholder="Assunto">
+                    </div>
+                    <div class="campos-formulario">
+                        <label for="mensagem">Mensagem</label>
+                        <textarea class="input" name="mensagem" class="input"  id="mensagem" placeholder="Escreva a sua mensagem"></textarea>
+                    </div>
+
+                    <input type="submit" name="enviar" value="Enviar" id="btn-enviar">
+                </form>
+            </div>
+            <div class="mapa">
+                <div id="subtitulos">
+                    <h2>DelasTech Lab</h2>
+                </div>    
+                <iframe class="mapa-contato" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.150182366512!2d-43.12844192377819!3d-22.907830837910012!
+                2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x998163372c483f%3A0xf1f22d78a2736925!2sMuseu%20de%20Arte%20Contempor%C3%A2nea%
+                20de%20Niter%C3%B3i!5e0!3m2!1spt-BR!2sbr!4v1744238438659!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+        
+    <script src="script.js"></script>
+{% endblock %}

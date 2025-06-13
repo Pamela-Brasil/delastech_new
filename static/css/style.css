@@ -21,16 +21,43 @@ header {
     justify-content: center;
     flex-direction: column;
 }
-#logo{
-    padding: 40px;
-    height: 280px;
+#logo {
+    max-height: 380px;
+    width: auto;
+    padding: 20px;
+    display: block;
+    margin: 0 auto;
+    filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.4));
 }
+.logo-img {
+    max-height: 180px; /* ou ajusta pra maior se quiser */
+    height: auto;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+    filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.3));
+    transition: transform 0.3s ease-in-out;
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
+}
+
+header nav ul li a {
+    font-family: 'Montserrat', sans-serif; /* nova fonte */
+    font-size: 1.1rem; /* menor e legível */
+    color:  #e6cfcf;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 8px 16px;
+}
+
 header nav ul {
     display: flex;
     align-items: center;
     list-style: none;
 }
-header nav ul li a {
+/* header nav ul li a {
     color: #7d9d87;
     font-family: 'Playfair Display', serif;
     font-style: italic;
@@ -39,7 +66,8 @@ header nav ul li a {
     text-align: center;
     padding: 15px;
     font-size: clamp(2rem, 5vw, 4rem); /* *************** */
-}
+/* } */
+
 body main section div h1 {
     padding: 20px 80px 20px 80px;
     font-family: 'Open Sans', sans-serif;
@@ -153,24 +181,6 @@ body main section div h1 {
     font-size: 2clamp(2rem, 5vw, 4rem); /* ********* */
     font-family: 'Open Sans', sans-serif;
     margin-bottom:30px;
-}
-footer {
-    background-color:  #5e0219;
-    font-family: serif;
-    font-style: italic;
-    color: #c48b47;
-    padding: 50px;
-    margin-top: 20px;
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    min-height: 100%;
-}
-.footer-main {
-    font-size: clamp(2rem, 5vw, 4rem); /* *************************** */
-}
-.contato-footer {
-    text-align: center;
 }
 .servicos h1 {
     font-size: clamp(2rem, 5vw, 4rem); /* ****************************** */

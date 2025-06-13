@@ -5,11 +5,23 @@
 
 {% block content %}
 
-<div class="text-center my-5">
-    <img id="slogan" src="{% static 'img\slogan.png' %}" class="img-fluid" alt="Slogan DelasTech">
-</div>
+<section id="slogan-section">
+    <img id="slogan-img" src="{% static 'img/slogan.png' %}" alt="Slogan DelasTech">
+</section>
+    <style>
+        #slogan-section {
+        display: flex;
+        justify-content: center;
+        padding: 40px 20px;
+        }
 
-<section class="container bg-warning bg-opacity-75 rounded-5 py-5 px-4 mb-5">
+        #slogan-img {
+            max-width: 80%;
+            height: auto;
+            display: block;
+        }
+    </style>
+<section class="container bg-warning bg-opacity-75 background-color: #c48b47 rounded-5 py-5 px-4 mb-5">
     <h1 class="text-center fw-bold text-danger mb-4">Nós somos a DelasTech!</h1>
     <p class="text-center fs-5 text-light">
         A DelasTech visa promover o protagonismo feminino na tecnologia por meio do desenvolvimento de soluções digitais inovadoras em front e back-end, ao mesmo tempo em que capacitamos, acolhemos e fortalecemos mulheres desenvolvedoras em diferentes momentos da carreira — desde jovens em busca de propósito até profissionais que retomam sua trajetória após a maternidade.
