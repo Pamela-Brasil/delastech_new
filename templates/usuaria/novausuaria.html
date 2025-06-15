@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% block title %}Cadastro DelasTech|Delas{% endblock %}
+
+{% block content %}
+<section  class="container mt-5" style="background-color: #f7e5ea; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); color: #2c2e3a;"  >
+    <section class="container p-5 m5 d-flex align-items-center justify-content-center">
+        <div class="text-center mb-4">
+            <h2>{{ titulo }}</h2>
+        </div>
+    </section>
+    <section class="container">
+        <form action="" method="post" class="needs-validation" novalidate>
+            {% csrf_token %}
+            
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="form-group mb-3">
+                        <label for="id_nome"><strong>Nome:</strong>  </label>
+                        {{ form.nome }}
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="id_nome"><strong>Sobrenome:</strong></label>
+                        {{ form.sobrenome  }}
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="id_nome"><strong>Apelido:</strong></label>
+                        {{ form.apelido }}
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="id_nome"><strong>Data de Nascimento:</strong>  </label>
+                        {{ form.data_nascimento }}
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="id_nome"><strong>CPF:</strong></label>
+                        {{ form.cpf }}
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="id_nome"><strong>CNPJ:</strong></label>
+                        {{ form.cnpj }}
+                    </div>         
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group mb-3">
+                        <label for="id_nome"><strong>Escolaridade:</strong>  </label>
+                        {{ form.escolaridade }}
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="id_nome"><strong>Idiomas:</strong></label>
+                        {{ form.idiomas }}
+                    </div>      
+                    <div class="form-group mb-3">
+                        <label for="id_nome"><strong>Experiências:</strong></label>
+                        {{ form.experiencia }}
+                    </div>    
+                    <div class="form-group mb-3">
+                        <label for="id_nome"><strong>E-mail:</strong></label>
+                        {{ form.email }}
+                    </div>          
+                    <div class="form-group mb-3">
+                        <label for="id_nome"><strong>Telefone:</strong></label>
+                        {{ form.telefone }}
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="id_nome"><strong>Senha:</strong></label>
+                        {{ form.senha }}
+                    </div>
+                </div>
+                
+
+                <div class="d-grid gap-2 col-6 mx-auto m-4"> 
+                    <button class="btn btn-primary btn-lg" style="background-color: #7d9d87; border-color: #2c2e3a; color: #f7e5ea" type="submit">{{ botao }}</button>
+                </div>
+            </div>
+        </form>
+            
+    </section>
+</section>
+    
+{% endblock %}
+

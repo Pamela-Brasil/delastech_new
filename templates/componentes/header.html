@@ -3,7 +3,6 @@
 <nav class="navbar navbar-expand-lg px-4 py-3" style="background-color: #5e0219;">
     <div class="container-fluid flex-column">
         
-        <!-- LOGO CENTRALIZADA -->
         <a class="navbar-brand mx-auto mb-2" href="{% url 'home' %}">
             <img src="{% static 'img/logo.2.png' %}" alt="Logo DelasTech" class="img-fluid logo-img">
         </a>
@@ -13,8 +12,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <!-- MENU + BOTÕES -->
-        <div class="collapse navbar-collapse justify-content-between w-100" id="navbarDelas">
+        <div class="collapse navbar-collapse justify-content-between" style="font-color: #e6cfcf" id="navbarDelas">
             <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-4">
                 <li class="nav-item">
                     <a class="nav-link text-light fw-bold" href="{% url 'home' %}">Home</a>
@@ -29,7 +27,7 @@
                     <a class="nav-link text-light fw-bold" href="{% url 'contato' %}">Fale com Elas</a>
                 </li>
                 <li>
-                    <a class="nav-link text-light fw-bold" >Login</a>  {% comment %} inserir link de página com os logins, tanto de empresa, quanto de usuaria {% endcomment %}
+                    <a class="nav-link text-light fw-bold" href="{% url 'geral_login' %}" >Login</a>  {% comment %} inserir link de página com os logins, tanto de empresa, quanto de usuaria {% endcomment %}
                 </li>
             </ul>
         </div>

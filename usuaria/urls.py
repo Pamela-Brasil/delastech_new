@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import CadastroUs, EdicaoUs,ListaUsuarias, Exclusao
+from .views import CadastroUs, EdicaoUs,ListaUsuarias, Exclusao, Perfil, Logout, LoginUser
 
 
 urlpatterns = [
@@ -7,4 +7,7 @@ urlpatterns = [
     path('editarela/', EdicaoUs.as_view(), name="edit_user"),
     path('candidatas/', ListaUsuarias.as_view(), name="candidatas"),
     path('deleta/', Exclusao.as_view(), name="delete_user"),
+    path('logindela/', LoginUser ,name="login_user"),
+    path('perfildela/', Perfil, name="perfil_user"),
+    path('logoutdela/', Logout.as_view(), name="logout_user"),
 ]

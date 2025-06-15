@@ -1,17 +1,4 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    height: max-content;
-}
-body {
-    background-color: #7d9d87;
-}
-main {
-    margin: 50px;
-    height: auto;
-    min-height: 71vh;
-}
+
 header {
     background-color: #5e0219;
     height: 500px;
@@ -57,16 +44,6 @@ header nav ul {
     align-items: center;
     list-style: none;
 }
-/* header nav ul li a {
-    color: #7d9d87;
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-weight: bold;
-    text-decoration: none;
-    text-align: center;
-    padding: 15px;
-    font-size: clamp(2rem, 5vw, 4rem); /* *************** */
-/* } */
 
 body main section div h1 {
     padding: 20px 80px 20px 80px;

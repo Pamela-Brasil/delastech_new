@@ -1,57 +1,86 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login, logout
-from django.contrib import messages
-from django.contrib.auth.decorators import login_required
+from django.urls import reverse_lazy
 from .models import Usuaria
-from .forms import FormUsuaria
-from django.views.generic import ListView,CreateView,UpdateView, DeleteView
+from django.contrib.auth import authenticate, login
+from .forms import LoginUsuariaForm, RegistroUsuariaForm as FormUsuaria
+from django.views.generic import ListView,CreateView,UpdateView, DeleteView, View
 
 # Create your views here.
 class CadastroUs(CreateView):
     model = Usuaria
     form_class = FormUsuaria
     template_name = 'usuaria/novausuaria.html'
-    success_urls = ''
-
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['titulo'] = 'Cadastro Delas'
+        context['botao'] = 'Cadastrar'
+        return context
+    success_url = reverse_lazy('perfil_user')
+    
 
 class EdicaoUs(UpdateView):
     model = Usuaria
     form_class = FormUsuaria
-    template_name = 'usuaria/edituser.html'
-    success_url = ''
+    template_name = 'usuaria/novausuaria.html'
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['titulo'] = 'Editar Perfil'
+        context['botao'] = 'Salvar'
+        return context
+    success_url = 'usuaria/perfiluser.html'
   
 
 class ListaUsuarias(ListView):  #Nessa class, mais tarde entrará a página de consulta das empresas com filtro
     model = Usuaria
     form_class = FormUsuaria
-    template_name = 'usuaria/candidatas.html'
+
+    def get(self, request, *args, **kwargs):
+
+        #Verificar se a sessão tem 'nome_cliente'
+        if 'nome_empresa' not in request.session:
+            return redirect('login_empresa') #retorna para o formulario
+        
+        #Se a sessao existir e o usaurio esriver autenticado segue enfrente
+        return super().get(request, *args, **kwargs)
     
+    template_name = 'usuaria/candidatas.html'
 
 class Exclusao(DeleteView):
     model = Usuaria
     form_class = FormUsuaria
-    template_name = 'usuaria/delete'
-    success_url = ''
+    template_name = 'usuaria/deleteuser.html'
+    success_url = reverse_lazy('geral_login')
 
-# Página principal do fórum 
-@login_required(login_url='login')
-def forum_home(request):
-    return render(request, 'forum_home.html')  
+def Perfil(request):
+    return render(request, 'usuaria/perfiluser.html')
 
-# View de login
-def login_view(request):
+def LoginUser(request):
     if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
-        user = authenticate(request, username=username, password=password)
-        if user is not None:
-            login(request, user)
-            return redirect('forum_home')
-        else:
-            messages.error(request, 'Usuário ou senha inválidos.')
-    return render(request, 'login.html')
+        form = LoginUsuariaForm(request.POST)
+        if form.is_valid():
+            email = form.cleaned_data['email']
+            senha = form.cleaned_data['senha']
+
+            user = authenticate(request, username=email, password=senha)
+
+            if user is not None:
+                login(request, user)
+                return redirect('perfil_user') 
+            else:
+                form.add_error(None, 'Email ou senha inválidos.')
+    else:
+        form = LoginUsuariaForm()
+    
+    return render(request, 'usuaria/loginuser.html', {'form': form})
 
 # View de logout
-def logout_view(request):
-    logout(request)
-    return redirect('login')
+class Logout(View):
+    #Metodo que verifica e encerra a sessão
+    def get(self, request):
+        if 'nome_usuaria' in request.session:
+            del request.session['nome_usuaria']
+       
+        erro_message = 'Você foi desconectada! Até mais!'
+        return render(request, 'usuaria/loginuser.html', {'mensagem': erro_message})
+        
+

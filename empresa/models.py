@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.validators import RegexValidator
+from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 
 # Create your models here.
 
@@ -15,10 +16,11 @@ class Empresa(models.Model):
     seguimento = models.CharField(max_length=20)
     porte = models.CharField(max_length=2, choices=PORTE_CHOICES)
     contato = models.EmailField(unique=True)
+    senha = models.CharField(max_length=100, default='senha123')
 
     def __str__(self):
-        return f"{self.nome} {self.seguimento}"
-    
+        return f"{self.nome}"
+       
     class Meta:
         verbose_name = "Empresa"
         ordering = ['nome','seguimento']

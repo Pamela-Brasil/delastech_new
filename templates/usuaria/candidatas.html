@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="container py-5" style="background-color: #f7e5ea; color: #2c2e3a; font-family: 'Poppins', sans-serif;">
+    <section>
+        <div class="titulo"><h2>Candidatas | DelasTech</h2></div>
+        
+    </section>
+    <section>
+        <table>
+            <tr>
+                <th>Nome</th>
+                <th>Sobrenome</th>
+                <th>CPF</th>
+                <th>CNPJ</th>
+                <th>Data de Nascimento</th>
+                <th>Telefone</th>
+                <th>Email</th>
+                <th>Escolaridade</th>
+                <th>Idiomas</th>
+                <th>Experiências</th>
+                
+            </tr>
+            {% for usuaria in usuaria_list %}
+            <tr>
+                <td>{{usuaria.nome}}</td>
+                <td>{{usuaria.sobrenome}}</td>
+                <td>{{usuaria.cpf}}</td>
+                <td>{{usuaria.cnpj}}</td>
+                <td>{{usuaria.data_nascimento | date:"d/m/Y"}}</td>                
+                <td>{{usuaria.telefone}}</td>
+                <td>{{usuaria.email}}</td>
+                <td>{{usuaria.escolaridade}}</td>
+                <td>{{usuaria.idiomas}}</td>
+                <td>{{usuaria.experiencias}}</td>
+            {% endfor  %}
+        </table>  
+    </section>
+</section>
+{% endblock %}

@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'principal.apps.PrincipalConfig',
     'bootstrap5',
 
+
 ]
 
 MIDDLEWARE = [

@@ -12,3 +12,6 @@ def Contato(request):
 
 def Servicos(request):
     return render(request, 'principal/servicos.html')
+
+def Login_Geral(request):
+    return render(request, 'principal/login_geral.html')
