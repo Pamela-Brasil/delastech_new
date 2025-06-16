@@ -5,5 +5,3 @@ class UsuariaConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
     name = 'usuaria'
 
-    def ready(self):
-        import usuaria.signals

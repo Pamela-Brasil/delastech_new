@@ -9,5 +9,5 @@ urlpatterns = [
     path('deleta/', Exclusao.as_view(), name="delete_user"),
     path('logindela/', LoginUser ,name="login_user"),
     path('perfildela/', Perfil, name="perfil_user"),
-    path('logoutdela/', Logout.as_view(), name="logout_user"),
+    path('logoutdela/', Logout, name="logout_user"),
 ]

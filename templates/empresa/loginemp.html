@@ -13,7 +13,14 @@
                 {% csrf_token %}
                 
                 <div class="mb-3 text-start">
-                    <label for="id_email" class="form-label">Email</label>
+                    <label for="{{ form.email.id_for_label }}"><strong>E-mail:</strong></label>
+                        {{ form.email }}
+                        {% if form.email.errors %}
+                            <div class="invalid-feedback d-block">
+                                {% for error in form.email.errors %}{{ error }}{% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
                     <input type="email" name="email" class="form-control" id="id_email" placeholder="Digite seu email" required>
                 </div>
 
