@@ -12,10 +12,10 @@ class Empresa(models.Model):
     ]
     user = models.OneToOneField(User, on_delete=models.CASCADE,default=None)
     nome = models.CharField(max_length=100)
-    cnpj = models.CharField(max_length=18, unique=True, validators=[RegexValidator(regex=r'^\d{2}\.\d{3}\.\d{3}/\d{4}-\d{2}$', message='CNPJ deve estar no formato XX.XXX.XXX/XXXX-XX')])
+    cnpj = models.CharField(max_length=18, unique=True)
     seguimento = models.CharField(max_length=20)
     porte = models.CharField(max_length=2, choices=PORTE_CHOICES)
-    contato = models.EmailField(unique=True)
+    email = models.EmailField(unique=True)
     
 
     def __str__(self):

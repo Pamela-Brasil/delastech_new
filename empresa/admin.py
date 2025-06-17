@@ -4,6 +4,6 @@ from django.contrib import admin
 from .models import Empresa
 
 class EmpresaAdmin(admin.ModelAdmin):
-    list_display = ('nome', 'porte', 'cnpj', 'contato')
+    list_display = ('nome', 'porte', 'cnpj', 'email')
 
 admin.site.register(Empresa, EmpresaAdmin)

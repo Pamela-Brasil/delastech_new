@@ -1,26 +1,30 @@
 {% extends 'base.html' %}
 {% load static %}
-
+{% block title %}Perfil Empresa | DelasTech{% endblock %}
 {% block content %}
-<div class="container py-5" style="background-color: #f7e5ea; color: #2c2e3a; font-family: 'Poppins', sans-serif; ">
+<div class="container py-5 mt-4" style="background-color: #f7e5ea; color: #2c2e3a; font-family: 'Poppins', sans-serif; ">
   <div class="row justify-content-center">
     <div class="col-md-10">
-      <div class="card shadow-lg rounded-4 border-0">
-        <div class="card-body p-5">
+      <div class="card shadow-lg rounded-4 border-0" >
+        <div class="card-body p-5" style="color:  #5e0219; font-family: 'Poppins', sans-serif;">
 
           <!-- Título principal -->
-            <h2 class="card-title text-center mb-4">👩‍💻 Olá, "{{ empresa.nome }}"!</h2>
+            <h2 class="card-title text-center mb-4">👩‍💻 Olá, {{ empresa.nome }}!</h2>
 
             <div class="d-flex justify-content-center flex-wrap gap-3 mb-5">
-                <a href="{% url 'novaparceira' %}" class="btn btn-outline-primary" style="background-color: #2c2e3a color: #f7e5ea;">
+                <a href="{% url 'editarempresa' empresa.id %}" class="btn btn-outline-primary" style="background-color: #7d9d87; color: rgb(255, 255, 255);">
                 ✏️ Editar Perfil
                 </a>
-                <a href="{% url 'delete_emp' %}" class="btn btn-outline-danger" style="background-color: #2c2e3a color: #f7e5ea;">
+                <a href="{% url 'candidatas' %}" class="btn btn-outline-light"  style="background-color: #c48b47; color:rgb(255, 255, 255);">
+                  💬 Acessar Candidatas
+                </a>
+                <a href="{% url 'delete_emp' empresa.id %}" class="btn btn-outline-light" style="background-color: #5e0219; color: #f7e5ea;">
                 🗑️ Excluir Perfil
                 </a>
-                <a href="{% url 'candidatas' %}" class="btn btn-outline-success" style="background-color: #2c2e3a color:#f7e5ea;">
-                💬 Acessar Candidatas
+                <a href="{% url 'logout_emp' %}" class="btn btn-outline-light" style="background-color: #2c2e3a; color:rgb(255, 255, 255);">
+                  🚪 Sair da Conta
                 </a>
+
             </div>
         </div>
       </div>

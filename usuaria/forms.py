@@ -36,26 +36,43 @@ class RegistroUsuariaForm(forms.ModelForm):
         }
 
     
-    def clean_email(self):
-        email = self.cleaned_data['email']
-        if User.objects.filter(email=email).exists():
-            raise forms.ValidationError("Este email já está cadastrado. Por favor, use outro.")
-        return email
-    
+
     def save(self, commit=True):
-        # Cria o User
-        user = User.objects.create_user(
-            username=self.cleaned_data['email'],
-            email=self.cleaned_data['email'],
-            password=self.cleaned_data['senha']
-        )
         usuaria = super().save(commit=False)
-        usuaria.user = user
-        usuaria.senha = self.cleaned_data.get('senha') 
+
+        if not usuaria.user_id:
+            user = User.objects.create_user(
+                username=self.cleaned_data['email'],
+                email=self.cleaned_data['email'],
+                password=self.cleaned_data['senha']
+            )
+            usuaria.user = user
+        else:
+            user = usuaria.user
+            user.username = self.cleaned_data['email']
+            user.email = self.cleaned_data['email']
+            if self.cleaned_data.get('senha'):
+                user.set_password(self.cleaned_data['senha'])
+            user.save()
+
         if commit:
             usuaria.save()
-            self.save_m2m()  
+
         return usuaria
+
+        
+    def clean_email(self):
+        email = self.cleaned_data['email']
+        user_qs = User.objects.filter(username=email)
+
+        if self.instance.user_id:
+            user_qs = user_qs.exclude(pk=self.instance.user.pk)
+
+        if user_qs.exists():
+            raise forms.ValidationError("Este e-mail já está em uso.")
+
+        return email
+    
     def clean(self):
         cleaned_data = super().clean()
         senha = cleaned_data.get("senha")
