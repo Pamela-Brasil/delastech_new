@@ -1,33 +1,30 @@
-{% load static %}
-{% load bootstrap5 %}
-{% bootstrap_css %}
-{% bootstrap_javascript %}
-
-
+{% load static %} {% load django_bootstrap5 %} {% bootstrap_css %}
+{%bootstrap_javascript %}
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <title>
-        {% block title %} {% endblock %}
-    </title>
-</head>
-<body style="background-color: #7d9d87;">
-    <header>
-        {% include 'componentes/header.html' %}
-    </header>
-    <main>
-        {% block content %} {% endblock %}
-    </main>
-    
-</body>
-<footer>
-    {% include 'componentes/footer.html' %}
-</footer>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <title>{% block title %} {% endblock %}</title>
+  </head>
+  <body style="background-color: #7d9d87">
+    <header>{% include 'componentes/header.html' %}</header>
+    <main>{% block content %} {% endblock %}</main>
+  </body>
+  <footer>{% include 'componentes/footer.html' %}</footer>
 </html>

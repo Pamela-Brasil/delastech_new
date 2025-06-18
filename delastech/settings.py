@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'usuaria.apps.UsuariaConfig',
     'forum_app.apps.ForumAppConfig',
     'principal.apps.PrincipalConfig',
-    'bootstrap5',
+    'django_bootstrap5',
 
 
 ]
