@@ -1,30 +1,66 @@
 {% extends "base.html" %}
+{% load static %}
+
 {% block title %}Nossos Serviços | DelasTech{% endblock %}
+
 {% block content %}
-    <section class="servicos"> 
-        <h1>Nossos Serviços</h1>
-            <p>Na <strong>DelasTech</strong>, oferecemos soluções tecnológicas pensadas por e para mulheres. Nosso objetivo é empoderar através da tecnologia, promovendo inclusão, aprendizado e inovação.</p>
-    
-        <div class="cards-servicos">
-            <div class="card">
-                <h2>Mentorias em Tecnologia</h2>
-                <p>Conectamos mulheres com profissionais experientes da área para orientar, inspirar e apoiar no desenvolvimento de suas carreiras.</p>
-            </div>
-    
-            <div class="card">
-                <h2>Workshops e Cursos</h2>
-                <p>Oferecemos oficinas práticas e cursos de programação, design, segurança digital, entre outros, com foco em acessibilidade e didática inclusiva.</p>
-            </div>
-    
-            <div class="card">
-                <h2>Consultoria para Negócios Femininos</h2>
-                <p>Ajudamos empreendedoras a implementar soluções tecnológicas personalizadas para otimizar seus negócios e alcançar mais resultados.</p>
-            </div>
-    
-            <div class="card">
-                <h2>Eventos e Comunidades</h2>
-                <p>Organizamos eventos, encontros e grupos de apoio para mulheres na tecnologia, promovendo networking e troca de experiências.</p>
-            </div>
+<section class="container py-5" style="background-color: #f7e5ea; font-family: 'Poppins', sans-serif;">
+    <div class="text-center mb-5">
+        <h1 class="fw-bold" style="color: #5e0219; font-size: 2rem;">Nossos Serviços</h1>
+        <p class="fs-10 mt-3">
+        Na <strong>DelasTech</strong>, oferecemos soluções tecnológicas pensadas por e para mulheres.
+        Nosso objetivo é empoderar através da tecnologia, promovendo inclusão, aprendizado e inovação.
+        </p>
+    </div>
+
+  <!-- Cards de Serviços -->
+    <div class="d-flex flex-row flex-wrap gap-4 justify-content-center">
+        <div class="card col-md-4 m-2 p-4 rounded-4 shadow-sm" style="background-color: #ffffff;">
+            <h2 class="h5 text-center" style="color: #2c2e3a;"><strong>Mentorias em Tecnologia</strong></h2>
+            <p class="fs-10 mt-2">Conectamos mulheres com profissionais experientes da área para orientar, inspirar e apoiar no desenvolvimento de suas carreiras.</p>
         </div>
-    </section>
+
+        <div class="card col-md-4 m-2 p-4 rounded-4 shadow-sm" style="background-color: #ffffff;">
+            <h2 class="h5 text-center" style="color: #2c2e3a;"><strong>Workshops e Cursos</strong></h2>
+            <p class="fs-10 mt-2">Oferecemos oficinas práticas e cursos de programação, design, segurança digital, entre outros, com foco em acessibilidade e didática inclusiva.</p>
+        </div>
+
+        <div class="card col-md-4 m-2 p-4 rounded-4 shadow-sm" style="background-color: #ffffff;">
+            <h2 class="h5 text-center" style="color: #2c2e3a;"><strong>Consultoria para Negócios Femininos</strong></h2>
+            <p class="fs-10 mt-2">Ajudamos empreendedoras a implementar soluções tecnológicas personalizadas para otimizar seus negócios e alcançar mais resultados.</p>
+        </div>
+
+        <div class="card col-md-4  m-2 p-4 rounded-4 shadow-sm" style="background-color: #ffffff;">
+            <h2 class="h5 text-center" style="color: #2c2e3a;"><strong>Eventos e Comunidades</strong></h2>
+            <p class="fs-10 mt-2">Organizamos eventos, encontros e grupos de apoio para mulheres na tecnologia, promovendo networking e troca de experiências.</p>
+        </div>
+    </div>
+
+    <!-- Botão único no final dos cards -->
+    <div class="text-center mt-5">
+        <a href="{% url 'contato' %}" class="btn btn-lg" style="background-color: #7d9d87; color: white; border-radius: 12px;">
+        Entre em Contato
+        </a>
+    </div>
+</section>
+<!-- ÍCONE DE COMUNIDADE ENTRE SEÇÕES -->
+<div class="icone-comunidade">
+    <img src="{% static 'img\comunidelas.png' %}" alt="Ícone da comunidade DelasTech">
+</div>
+
+<!-- BLOCO DA COMUNIDADE -->
+<section class="container my-5 p-5 rounded-4" style="background-color: #f7e5ea;">
+    <div class="text-center">
+        <h2 class="mb-4" style="color: #5e0219; font-weight: bold;">Seja uma Delas na Comunidade DelasTech</h2>
+        <p class="fs-5 mb-4">
+            Uma rede onde você tem a oportunidade de <strong>compartilhar experiências profissionais</strong>, tirar dúvidas,
+            realizar <strong>trabalhos colaborativos</strong>, crescer profissionalmente e <strong>colaborar com outras mulheres da comunidade</strong>.
+        </p>
+        <a href="{% url 'login_user' %}" class="btn btn-lg" style="background-color: #7d9d87; color: white; border-radius: 12px;">
+            PARTICIPAR
+        </a>
+    </div>
+</section>
+
 {% endblock %}
+
