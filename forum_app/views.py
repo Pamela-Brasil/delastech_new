@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -40,3 +40,23 @@ def novo_post(request):
         else:
             messages.error(request, 'Preencha todos os campos.')
     return render(request, 'forum_app/criar_postagem.html')
+
+# Editar postagem
+@login_required(login_url='login')
+def editar_post(request, post_id):
+    post = get_object_or_404(Post, id=post_id, autor=request.user)
+    if request.method == 'POST':
+        post.titulo = request.POST.get('titulo')
+        post.conteudo = request.POST.get('conteudo')
+        post.save()
+        return redirect('forum_home')
+    return render(request, 'forum_app/editar_postagem.html', {'post': post})
+
+# Excluir postagem
+@login_required(login_url='login')
+def excluir_post(request, post_id):
+    post = get_object_or_404(Post, id=post_id, autor=request.user)
+    if request.method == 'POST':
+        post.delete()
+        return redirect('forum_home')
+    return render(request, 'forum_app/excluir_confirmar.html', {'post': post})
