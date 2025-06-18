@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}Nossos Serviços | DelasTech{% endblock %}
+{% block content %}
+{% load django_bootstrap5 %}
+
+    <section class="servicos"> 
+        <h1>Nossos Serviços</h1>
+            <p>Na <strong>DelasTech</strong>, oferecemos soluções tecnológicas pensadas por e para mulheres. Nosso objetivo é empoderar através da tecnologia, promovendo inclusão, aprendizado e inovação.</p>
+    
+        <div class="cards-servicos">
+            <div class="card">
+                <h2>Mentorias em Tecnologia</h2>
+                <p>Conectamos mulheres com profissionais experientes da área para orientar, inspirar e apoiar no desenvolvimento de suas carreiras.</p>
+            </div>
+    
+            <div class="card">
+                <h2>Workshops e Cursos</h2>
+                <p>Oferecemos oficinas práticas e cursos de programação, design, segurança digital, entre outros, com foco em acessibilidade e didática inclusiva.</p>
+            </div>
+    
+            <div class="card">
+                <h2>Consultoria para Negócios Femininos</h2>
+                <p>Ajudamos empreendedoras a implementar soluções tecnológicas personalizadas para otimizar seus negócios e alcançar mais resultados.</p>
+            </div>
+    
+            <div class="card">
+                <h2>Eventos e Comunidades</h2>
+                <p>Organizamos eventos, encontros e grupos de apoio para mulheres na tecnologia, promovendo networking e troca de experiências.</p>
+            </div>
+        </div>
+    </section>
+    <section class="container my-5 p-5 rounded-4" style="background-color: #f7e5ea;">
+        <div class="text-center">
+          <h2 class="mb-4" style="color: #5e0219; font-weight: bold;">Seja uma Delas na Comunidade DelasTech</h2>
+          <p class="fs-5 mb-4">
+            Uma rede onde você tem a oportunidade de <strong>compartilhar experiências profissionais</strong>, tirar dúvidas,
+            realizar <strong>trabalhos colaborativos</strong>, crescer profissionalmente e <strong>colaborar com outras mulheres da comunidade</strong>.
+          </p>
+          <a href="{% url 'login' %}" class="btn btn-lg" style="background-color: #7d9d87; color: white; border-radius: 12px;">
+            PARTICIPAR
+          </a>
+        </div>
+      </section>
+
+{% endblock %}

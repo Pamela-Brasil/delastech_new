@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'usuaria.apps.UsuariaConfig',
     'forum_app.apps.ForumAppConfig',
     'principal.apps.PrincipalConfig',
-    'bootstrap5',
+    #'bootstrap5',esse aqui é o que precisei ocultar
+     'django_bootstrap5',
 
 
 ]
