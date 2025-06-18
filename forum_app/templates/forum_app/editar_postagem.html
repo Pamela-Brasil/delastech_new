@@ -1,0 +1,20 @@
+{% extends 'forum_app/base.html' %}
+
+{% block content %}
+<div class="formulario-postagem">
+  <h2>Editar Postagem</h2>
+  <form method="POST">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="titulo">Título</label>
+      <input type="text" class="form-control" name="titulo" value="{{ post.titulo }}" required>
+    </div>
+    <div class="mb-3">
+      <label for="conteudo">Conteúdo</label>
+      <textarea class="form-control" name="conteudo" rows="5" required>{{ post.conteudo }}</textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Salvar</button>
+    <a href="{% url 'forum_home' %}" class="btn btn-secondary">Cancelar</a>
+  </form>
+</div>
+{% endblock %}
