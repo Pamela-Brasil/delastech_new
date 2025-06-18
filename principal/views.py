@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .forms import ContatoForm
 from django.contrib import messages
 
+
 def Contato(request):
     if request.method == 'POST':
         form = ContatoForm(request.POST)

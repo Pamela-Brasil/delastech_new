@@ -133,3 +133,24 @@ header nav ul li a {
     width: 20vh;
     height: auto;
 }
+
+.icone-comunidade {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 60px 0;
+}
+
+.icone-comunidade img {
+    max-height: 200px;
+    width: auto;
+    opacity: 0.9;
+    filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.3));
+    transition: transform 0.3s ease-in-out;
+}
+
+.icone-comunidade img:hover {
+    transform: scale(1.05);
+    opacity: 1;
+}
+
