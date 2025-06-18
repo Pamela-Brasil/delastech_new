@@ -43,20 +43,20 @@
         </a>
     </div>
 </section>
-<!-- ÍCONE DE COMUNIDADE ENTRE SEÇÕES -->
-<div class="icone-comunidade">
-    <img src="{% static 'img\comunidelas.png' %}" alt="Ícone da comunidade DelasTech">
-</div>
+
 
 <!-- BLOCO DA COMUNIDADE -->
 <section class="container my-5 p-5 rounded-4" style="background-color: #f7e5ea;">
+    <div class="icone-comunidade">
+        <img src="{% static 'img\comunidelas.png' %}" alt="Ícone da comunidade DelasTech">
+    </div>
     <div class="text-center">
         <h2 class="mb-4" style="color: #5e0219; font-weight: bold;">Seja uma Delas na Comunidade DelasTech</h2>
         <p class="fs-5 mb-4">
             Uma rede onde você tem a oportunidade de <strong>compartilhar experiências profissionais</strong>, tirar dúvidas,
             realizar <strong>trabalhos colaborativos</strong>, crescer profissionalmente e <strong>colaborar com outras mulheres da comunidade</strong>.
         </p>
-        <a href="{% url 'login_user' %}" class="btn btn-lg" style="background-color: #7d9d87; color: white; border-radius: 12px;">
+        <a href="{% url 'nova_user' %}" class="btn btn-lg" style="background-color: #7d9d87; color: white; border-radius: 12px;">
             PARTICIPAR
         </a>
     </div>

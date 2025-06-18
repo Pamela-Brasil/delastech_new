@@ -60,7 +60,7 @@
   <!-- topo -->
   <div class="top-bar">
     <div>Olá, <strong>{{ request.user.username }}</strong>!</div> <!--aqui pam, podemos colocar o nome cadastrado-->
-    <form method="post" action="{% url 'logout' %}">
+    <form method="post" action="{% url 'home' %}">
       {% csrf_token %}
       <button type="submit" class="btn-logout">Sair</button>
     </form>

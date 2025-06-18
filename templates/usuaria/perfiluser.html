@@ -10,7 +10,7 @@
       <div class="card shadow-lg rounded-4 border-0">
         <div class="card-body p-5" style="color:  #5e0219; font-family: 'Poppins', sans-serif;">
 
-            <h2 class="card-title text-center mb-4">👩‍💻 Olá, {{ usuaria.apelido }}!</h2>
+            <h2 class="card-title text-center mb-4 fw-bold" style=" font-size: 3rem; ">👩‍💻 Olá, {{ usuaria.apelido }}!</h2>
 
             <div class="d-flex justify-content-center flex-wrap gap-3 mb-5 mt-4">
                 <a href="{% url 'edit_user' usuaria.id %}" class="btn btn-outline-light" style="background-color: #7d9d87;color: rgb(255, 255, 255);">
